@@ -6,5 +6,11 @@ export function calculateClassAverage(students, courseId){
 if (grades.length === 0) return 0;
 return grades.reduce((sum, g) => sum + g, 0) / grades.length;
 
+}
+
+export function findTopStudent(students) {
+    if (students.length === 0) return null;
+    return students.reduce((best, s) => (getAverage() > best.getAverage() ? s : best));
 
 }
+
