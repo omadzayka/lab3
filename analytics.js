@@ -14,3 +14,11 @@ export function findTopStudent(students) {
 
 }
 
+export function filterStudents(students, criteriaFn) {
+    const result = [];
+    for (const s of students) {
+        if (criteriaFn(s)) result.push (s);
+    }
+    return result;
+}
+
