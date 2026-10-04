@@ -13,7 +13,7 @@ fetchStudents((rawData) => {
   console.log(`Original ID: ${students[0].id}`);
   console.log("Attempting to change ID to 999...");
   try {
-    students[0].id = 999; // throws in strict mode (ES modules)
+    students[0].Id = 999; // throws in strict mode (ES modules)
   } catch (err) {
     // expected: TypeError, id is read-only
   }
