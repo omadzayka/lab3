@@ -4,7 +4,7 @@ import { calculateClassAverage, fintTopStudent, filterStudent } from "./analytic
 
 console.log("Fetching data from database..");
 
-fetchStudents(rawData) =>  {
+fetchStudents(rawData)  ;  {
     console.log("Data recieved!\n");
 
     const students = rawData.map((d) => new Student(d.id, d.name, d.courses));
@@ -23,4 +23,12 @@ fetchStudents(rawData) =>  {
 
     console.log("--- Analytics Report---");
     console.log(`Class Average for Course 101: ${calculateClassAverage(students, 101).toFixed(2)}`);
-}
+    
+    const top = findTopStudent(students);
+     console.log(`Top Student: ${top.name} (Average: ${top.getAverage()})`);
+
+   const in102 = filterStudents(students, (s) => s.courses.some((c) => c.courseId === 102));
+  console.log(`Students in Course 102: ${in102.map((s) => s.name).join(", ")}`);
+};
+ 
+

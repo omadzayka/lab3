@@ -1,7 +1,7 @@
 export class Student{
     constructor(id, name, course = []) {
         // Read-only, non-delatble, non-reconfigurable id
-        Object.defineProperty(this, "id" {
+        Object.defineProperty(this, "id" ,  {
             value: id,
             writable: false,
             configurable: false,
@@ -12,7 +12,7 @@ export class Student{
     }
 
     addCourse(courseId, grade) {
-        this.courses.push.({courseId, grade});
+        this.courses.push({courseId, grade});
     }
 
     getAverage() {
